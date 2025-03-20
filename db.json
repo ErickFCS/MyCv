@@ -1,0 +1,168 @@
+{
+  "lang": [
+    {
+      "id": "ES",
+      "pageTitle": "CV Erick F. Carvalho Sanchez",
+      "name": "Erick Fer. Carvalho Sanchez",
+      "image": "perfil.png",
+      "role": "Programador y Aspirante a Técnico Electrónico",
+      "infos": [
+        {
+          "name": "",
+          "data": "octubre 2006",
+          "icon": "Cake"
+        },
+        {
+          "name": "",
+          "data": "ErickFCS",
+          "icon": "GitHub"
+        },
+        {
+          "name": "",
+          "data": "+54 911 6015-3626",
+          "icon": "Phone"
+        },
+        {
+          "name": "",
+          "data": "Erick Fernando Carvalho Sanchez",
+          "icon": "LinkedIn"
+        },
+        {
+          "name": "",
+          "data": "erickfcarvalhosanchez@gmail.com",
+          "icon": "Mail"
+        },
+        {
+          "name": "",
+          "data": "Turdera, Lomas de Zamora",
+          "icon": "Location"
+        }
+      ],
+      "description": "Soy un estudiante con muchas ganas de aprender y mejorar en todo lo que pueda. Siempre dispuesto a ir un poco más allá para lograr resultados mejores a los  esperados. Con buena actitud, habilidad para trabajar en equipo y con buen  manejo de tiempos. Me destaco en tareas que requieran implementar soluciones robustas y confiables. Principalmente en el ámbito de la programación, pero  también en la electrónica. Entre mis cualidades y habilidades están la  paciencia, la atención, el respeto, el cuidado, y la toma rápida de decisiones.",
+      "sections": [
+        {
+          "name": "Historia laboral",
+          "items": [
+            {
+              "date": "Desde el 06/2024 hasta ahora",
+              "name": "Desarrollador Fullstack",
+              "clarification": "De forma autónoma",
+              "list": [
+                {
+                  "item": "Integró APIs de terceros para mejorar la funcionalidad general de la aplicación y mejorar la experiencia del usuario."
+                },
+                {
+                  "item": "Complemento de habilidades actualizado continuamente a través de cursos de desarrollo profesional, manteniéndose al día con las tendencias de la industria y las tecnologías emergentes."
+                },
+                {
+                  "item": "Demostró sólidas habilidades para la resolución de problemas al identificar y resolver rápidamente los defectos, lo que generó una mayor estabilidad de la aplicación y satisfacción del usuario."
+                },
+                {
+                  "item": "Realizó revisiones de código exhaustivas para mantener altos estándares de calidad y consistencia durante todo el ciclo de vida del proyecto."
+                },
+                {
+                  "item": "Resolvió desafíos técnicos complejos aprovechando un amplio conocimiento de lenguajes, herramientas y marcos de programación."
+                },
+                {
+                  "item": "Revisó el código, depuró problemas y corrigió problemas."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Educación",
+          "items": [
+            {
+              "date": "Graduación estimada para el 12/2025",
+              "name": "7° año: Electronica",
+              "clarification": "Instituto Tecnológico San Bonifacio - Lomas de Zamora, Argentina"
+            }
+          ]
+        },
+        {
+          "name": "Habilidades",
+          "items": [
+            {
+              "list_short": true,
+              "list": [
+                {
+                  "item": "Desarrollo Fullstack con React y Express.js",
+                  "icon": "React"
+                },
+                {
+                  "item": "Uso de tecnologías RestAPi y GraphQL con Apollo",
+                  "icon": "Api"
+                },
+                {
+                  "item": "Desarrollo de apps móviles con Expo y React Native",
+                  "icon": "Phone"
+                },
+                {
+                  "item": "Desarrollo de flujos CI/CD con GitHub Actions",
+                  "icon": "Actions"
+                },
+                {
+                  "item": "Entornos Linux Ubuntu/Debian/Alpine",
+                  "icon": "Linux"
+                },
+                {
+                  "item": "Uso de Docker y Docker Compose",
+                  "icon": "Docker"
+                },
+                {
+                  "item": "Control de código y versiones con Git y GitHub",
+                  "icon": "Git"
+                },
+                {
+                  "item": "Uso de Eslint",
+                  "icon": "Eslint"
+                },
+                {
+                  "item": "Testing fin a fin con Playwright",
+                  "icon": "Test"
+                },
+                {
+                  "item": "Testing unitario con Jest",
+                  "icon": "Test"
+                },
+                {
+                  "item": "Uso de base de datos Sql y NoSql",
+                  "icon": "Sql"
+                },
+                {
+                  "item": "Trabajo en equipo y colaboración",
+                  "icon": "Team"
+                },
+                {
+                  "item": "Habilidades organizativas",
+                  "icon": "ProblemSolved"
+                },
+                {
+                  "item": "Resolución de problemas",
+                  "icon": "ProblemSolved"
+                },
+                {
+                  "item": "Dominio del inglés y español",
+                  "icon": "Language"
+                },
+                {
+                  "item": "Comprensión y comunicación en portugués",
+                  "icon": "Language"
+                },
+                {
+                  "item": "Diseño de PCBs",
+                  "icon": "Pcb"
+                },
+                {
+                  "item": "Armado de PCBs",
+                  "icon": "Pcb"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

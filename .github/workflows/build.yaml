@@ -1,0 +1,46 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  simple_deployment_pipeline:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pnpm and forever
+        run: npm install -g pnpm@latest-10 forever
+      - name: Install dependencies
+        run: pnpm i
+      - name: Do linting
+        run: pnpm lint
+      - name: Do build
+        run: pnpm build
+      - name: Start json-server
+        run: pnpm serve
+      - name: Install playwright shell browser
+        run: pnpm playwright install chromium --only-shell --with-deps
+      - name: Render PDF
+        run: pnpm render
+      - name: Bump version and push tag
+        if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message , '#tag' ) }}
+        uses: anothrNick/github-tag-action@1.71.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
+      - name: Release
+        if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message , '#tag' ) && contains(github.event.head_commit.message , '#release' ) }}
+        uses: softprops/action-gh-release@v2
+        with:
+          files: CV.pdf
