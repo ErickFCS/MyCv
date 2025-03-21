@@ -6,7 +6,7 @@ import tseslint from 'typescript-eslint'
 import stylisticJs from '@stylistic/eslint-plugin-js'
 
 export default tseslint.config(
-    { ignores: ['dist', 'old'] },
+    { ignores: ['dist', 'old', 'docs'] },
     {
         extends: [
             js.configs.recommended,

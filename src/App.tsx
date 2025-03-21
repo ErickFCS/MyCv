@@ -1,24 +1,25 @@
-import { ResumeData, ResumeDataSchema } from './types'
+import { ResumeData } from './types'
 import InfoList from './components/InfoList'
 import SectionList from './components/SectionList/Index'
 import Stack from 'react-bootstrap/Stack'
 import Image from 'react-bootstrap/Image'
 import Spinner from 'react-bootstrap/Spinner'
 import { useEffect, useState } from 'react'
+import { getData } from './services'
 
 function App() {
     const [resumeData, setResumeData] = useState<null | ResumeData>(null)
     useEffect(() => {
         const doFetching = () => {
             setTimeout(() => {
-                fetch('/lang/ES')
-                    .then(async (response) => {
-                        const body = ResumeDataSchema.parse(await response.json())
-                        setResumeData(body)
-                        doFetching()
+                getData()
+                    .then((fetchedResumeData) => {
+                        setResumeData(fetchedResumeData[0])
+                        if (fetchedResumeData[1])
+                            doFetching()
                     })
-                    .catch((err) => {
-                        console.log(err)
+                    .catch((error) => {
+                        console.log(error)
                     })
             }, 5000)
         }

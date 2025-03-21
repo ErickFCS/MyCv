@@ -25,14 +25,14 @@ const icons = [
     'Test'
 ] as const
 
-export const IconSchema = z.enum(icons)
+export const IconSchema = z.enum(icons).optional()
 
 export type Icons = z.infer<typeof IconSchema>
 
 export interface Info {
     name: string;
     data: string;
-    icon: Icons;
+    icon?: Icons;
 }
 
 export const InfoSchema = z.object({
@@ -47,7 +47,7 @@ export interface Item {
     clarification?: string;
     list?: {
         item: string;
-        icon: Icons;
+        icon?: Icons;
     }[];
     list_short?: boolean;
 }

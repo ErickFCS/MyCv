@@ -5,7 +5,7 @@ import jsonserver from 'json-server'
 const app = jsonserver.create()
 const router = jsonserver.router('./db.json')
 const middleware = jsonserver.defaults({
-    static: './docs',
+    static: './dist',
     bodyParser: true
 })
 app.use(middleware)

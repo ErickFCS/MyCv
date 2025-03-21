@@ -13,7 +13,7 @@ on:
 
 jobs:
   simple_deployment_pipeline:
-    runs-on: ubuntu-22.04
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -33,14 +33,43 @@ jobs:
         run: pnpm playwright install chromium --only-shell --with-deps
       - name: Render PDF
         run: pnpm render
-      - name: Bump version and push tag
-        if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message , '#tag' ) }}
-        uses: anothrNick/github-tag-action@1.71.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEFAULT_BUMP: patch
-      - name: Release
-        if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message , '#tag' ) && contains(github.event.head_commit.message , '#release' ) }}
-        uses: softprops/action-gh-release@v2
+      - name: zip result
+        run: Compress-Archive -Path ./dist, CV.pdf -DestinationPath ./result
+      - name: Bump version and push tag if major
+        id: tagBumpMajor
+        if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message , '#major' ) }}
+        uses: mathieudutour/github-tag-action@v6.2
         with:
-          files: CV.pdf
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: major
+      - name: Bump version and push tag if minor
+        id: tagBumpMinor
+        if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message , '#minor' ) }}
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: minor
+      - name: Bump version and push tag if patch
+        id: tagBumpPatch
+        if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message , '#patch' ) }}
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: patch
+      - name: Get last tag
+        id: tagBump
+        if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message , '#release' ) }}
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: patch
+          dry_run: true
+      - name: Release
+        if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message , '#release' ) }}
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          artifacts: CV.pdf,result.zip
+          removeArtifacts: true
+          replacesArtifacts: true
+          tag: ${{steps.tagBump.outputs.previous_tag}}
