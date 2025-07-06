@@ -2,7 +2,7 @@ id: ES
 pageTitle: CV Erick F. Carvalho Sanchez
 name: Erick Fer. Carvalho Sanchez
 image: "perfil.png"
-role: Programador y Aspirante a Técnico Electrónico
+role: Informático y Aspirante a Técnico Electrónico
 infos:
   - name: ''
     data: octubre 2006
@@ -23,27 +23,27 @@ infos:
     data: Turdera, Lomas de Zamora
     icon: Location
 description: >-
-  Soy un estudiante con muchas ganas de aprender y mejorar en todo lo que pueda.
-  Siempre dispuesto a ir un poco más allá para lograr resultados mejores a los 
-  esperados. Con buena actitud, habilidad para trabajar en equipo y con buen 
-  manejo de tiempos. Me destaco en tareas que requieran implementar soluciones
-  robustas y confiables. Principalmente en el ámbito de la programación, pero 
-  también en la electrónica. Entre mis cualidades y habilidades están la 
-  paciencia, la atención, el respeto, el cuidado, y la toma rápida de decisiones.
+  Soy una persona tranquila, curiosa y perseverante, con
+  una mirada analítica sobre el mundo. Prefiero observar
+  antes que hablar, y disfruto aprendiendo en profundidad
+  sobre aquello que me interesa. Me atraen la tecnología, la
+  música, el diseño y el conocimiento en general, especialmente
+  en campos como la informática, la electrónica, la matemática
+  y la psicología. Creo en la sinceridad, la integridad y la
+  voluntad de cambiar para bien. Aunque muchas veces no me detengo
+  a pensar en lo que dejo en el mundo, me gustaría que, al
+  final, lo que permanezca de mí sea una forma de ser: 
+  atenta, constructiva, en constante evolución.
 sections:
   - name: Historia laboral
     items:
       - date: Desde el 06/2024 hasta ahora
-        name: Desarrollador Fullstack
+        name: Desarrollador Full Stack Freelance con enfoque en DevOps
         clarification: De forma autónoma
         list:
           - item: >-
               Integró APIs de terceros para mejorar la funcionalidad general de
               la aplicación y mejorar la experiencia del usuario.
-          - item: >-
-              Complemento de habilidades actualizado continuamente a través de
-              cursos de desarrollo profesional, manteniéndose al día con las
-              tendencias de la industria y las tecnologías emergentes.
           - item: >-
               Demostró sólidas habilidades para la resolución de problemas al
               identificar y resolver rápidamente los defectos, lo que generó una
@@ -52,13 +52,29 @@ sections:
               Realizó revisiones de código exhaustivas para mantener altos
               estándares de calidad y consistencia durante todo el ciclo de vida
               del proyecto.
-          - item: >-
-              Resolvió desafíos técnicos complejos aprovechando un amplio
-              conocimiento de lenguajes, herramientas y marcos de programación.
           - item: Revisó el código, depuró problemas y corrigió problemas.
+      - date: Desde el 05/2025 hasta ahora
+        name: Analista Técnico de Inventario y Automatización de Procesos
+        clarification: En Somarfer S.A.
+        list:
+          - item: >-
+              Transformé un proceso manual y en papel en un flujo semi-automático digital, con
+              posibilidad de automatización total si se eliminan los pasos manuales previos.
+          - item: >-
+              Reduje errores de stock en hasta un 80%
+          - item: >-
+              Automaticé más del 90% del proceso de carga y análisis de materiales,
+              disminuyendo drásticamente el tiempo de trabajo operativo y eliminando
+              tareas repetitivas, lentas y propensas a errores.
+          - item: >-
+              Desarrollé aplicaciones internas en Node.js y Python que transformaron
+              tareas manuales y frustrantes en flujos de trabajo eficientes y estandarizados.
+          - item: >-
+              Generé reportes personalizados para la dirección, mejorando la toma de
+              decisiones basada en datos sobre uso, disponibilidad y rotación de materiales.
   - name: Educación
     items:
-      - date: Graduación estimada para el 12/2025
+      - date: Graduación estimada para el 2025
         name: '7° año: Electronica'
         clarification: Instituto Tecnológico San Bonifacio - Lomas de Zamora, Argentina
   - name: Habilidades
@@ -67,37 +83,21 @@ sections:
         list:
           - item: Desarrollo Fullstack con React y Express.js
             icon: React
-          - item: Uso de tecnologías RestAPi y GraphQL con Apollo
+          - item: Uso de tecnologías RestAPi, y GraphQL con Apollo
             icon: Api
           - item: Desarrollo de apps móviles con Expo y React Native
             icon: Phone
           - item: Desarrollo de flujos CI/CD con GitHub Actions
             icon: Actions
-          - item: Entornos Linux Ubuntu/Debian/Alpine
-            icon: Linux
           - item: Uso de Docker y Docker Compose
             icon: Docker
           - item: Control de código y versiones con Git y GitHub
             icon: Git
-          - item: Uso de Eslint
-            icon: Eslint
-          - item: Testing fin a fin con Playwright
-            icon: Test
-          - item: Testing unitario con Jest
-            icon: Test
           - item: Uso de base de datos Sql y NoSql
             icon: Sql
           - item: Trabajo en equipo y colaboración
             icon: Team
-          - item: Habilidades organizativas
-            icon: ProblemSolved
           - item: Resolución de problemas
             icon: ProblemSolved
-          - item: Dominio del inglés y español
+          - item: Dominio del inglés y portugués
             icon: Language
-          - item: Comprensión y comunicación en portugués
-            icon: Language
-          - item: Diseño de PCBs
-            icon: Pcb
-          - item: Armado de PCBs
-            icon: Pcb
