@@ -1,33 +1,34 @@
-import { z } from 'zod'
+import { z } from "zod";
+
 
 const icons = [
-    'Actions',
-    'Api',
-    'Cake',
-    'Clean',
-    'Docker',
-    'Electronics',
-    'Eslint',
-    'Express',
-    'Git',
-    'GitHub',
-    'Language',
-    'LinkedIn',
-    'Linux',
-    'Location',
-    'Mail',
-    'Pcb',
-    'Phone',
-    'ProblemSolved',
-    'React',
-    'Sql',
-    'Team',
-    'Test'
-] as const
+    "Actions",
+    "Api",
+    "Cake",
+    "Clean",
+    "Docker",
+    "Electronics",
+    "Eslint",
+    "Express",
+    "Git",
+    "GitHub",
+    "Language",
+    "LinkedIn",
+    "Linux",
+    "Location",
+    "Mail",
+    "Pcb",
+    "Phone",
+    "ProblemSolved",
+    "React",
+    "Sql",
+    "Team",
+    "Test"
+] as const;
 
-export const IconSchema = z.enum(icons).optional()
+export const IconSchema = z.enum(icons).optional();
 
-export type Icons = z.infer<typeof IconSchema>
+export type Icons = z.infer<typeof IconSchema>;
 
 export interface Info {
     name: string;
@@ -36,10 +37,10 @@ export interface Info {
 }
 
 export const InfoSchema = z.object({
-    name: z.string(),
     data: z.string(),
-    icon: IconSchema
-})
+    icon: IconSchema,
+    name: z.string()
+});
 
 export interface Item {
     date?: string;
@@ -53,15 +54,15 @@ export interface Item {
 }
 
 export const ItemSchema = z.object({
-    date: z.string().optional(),
-    name: z.string().optional(),
     clarification: z.string().optional(),
+    date: z.string().optional(),
     list: z.array(z.object({
-        item: z.string(),
-        icon: IconSchema
+        icon: IconSchema,
+        item: z.string()
     })).optional(),
-    list_short: z.boolean().optional()
-})
+    list_short: z.boolean().optional(),
+    name: z.string().optional()
+});
 
 export interface Section {
     name: string;
@@ -69,9 +70,9 @@ export interface Section {
 }
 
 export const SectionSchema = z.object({
-    name: z.string(),
-    items: z.array(ItemSchema)
-})
+    items: z.array(ItemSchema),
+    name: z.string()
+});
 
 export interface ResumeData {
     pageTitle: string;
@@ -84,11 +85,11 @@ export interface ResumeData {
 }
 
 export const ResumeDataSchema = z.object({
-    pageTitle: z.string(),
-    name: z.string(),
-    image: z.string(),
-    role: z.string(),
     description: z.string(),
+    image: z.string(),
     infos: z.array(InfoSchema),
+    name: z.string(),
+    pageTitle: z.string(),
+    role: z.string(),
     sections: z.array(SectionSchema)
-})
+});

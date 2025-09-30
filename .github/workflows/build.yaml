@@ -19,16 +19,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install pnpm and forever
-        run: npm install -g pnpm@latest-10 forever
+      - name: Install pnpm
+        run: npm install -g pnpm@latest-10
       - name: Install dependencies
         run: pnpm i
       - name: Do linting
         run: pnpm lint
       - name: Do build
         run: pnpm build
-      - name: Start json-server
-        run: pnpm serve
       - name: Install playwright shell browser
         run: pnpm playwright install chromium --only-shell --with-deps
       - name: Render PDF
@@ -73,3 +71,8 @@ jobs:
           removeArtifacts: true
           replacesArtifacts: true
           tag: ${{steps.tagBump.outputs.previous_tag}}
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/client

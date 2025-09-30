@@ -1,50 +1,64 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
-import stylisticJs from '@stylistic/eslint-plugin-js'
+import js from "@eslint/js";
+import stylistic from "@stylistic/eslint-plugin";
+import ts from "@typescript-eslint/eslint-plugin";
+import parserTs from "@typescript-eslint/parser";
+import importPlugin from "eslint-plugin-import";
+import eslintPluginSortKeysFix from "eslint-plugin-sort-keys-fix";
+import globals from "globals";
 
-export default tseslint.config(
-    { ignores: ['dist', 'old', 'docs'] },
+
+export default [
+    { ignores: ["dist", "build"] },
     {
-        extends: [
-            js.configs.recommended,
-            ...tseslint.configs.recommendedTypeChecked
-        ],
-        files: ['**/*.{ts,tsx,js,jsx}'],
+        files: ["**/*.{js,ts}"],
         languageOptions: {
-            ecmaVersion: 2020,
-            globals: globals.browser,
+            globals: globals.node,
+            parser: parserTs,
             parserOptions: {
-                projectService: true,
-                tsconfigRootDir: import.meta.dirname,
-                project: './tsconfig.node.json'
+                ecmaVersion: "latest",
+                sourceType: "module"
             }
         },
-
         plugins: {
-            'react-hooks': reactHooks,
-            'react-refresh': reactRefresh,
-            '@stylistic/js': stylisticJs
+            "@stylistic": stylistic,
+            "@typescript-eslint": ts,
+            "importPlugin": importPlugin,
+            "sort-keys-fix": eslintPluginSortKeysFix
         },
         rules: {
-            ...reactHooks.configs.recommended.rules,
-            'react-refresh/only-export-components': [
-                'warn',
-                { allowConstantExport: true }
-            ],
-            '@stylistic/js/indent': ['error', 4],
-            '@stylistic/js/semi': ['error', 'never'],
-            '@stylistic/js/comma-dangle': ['error', 'never'],
-            '@stylistic/js/comma-spacing': ['error', { 'after': true }],
-            '@stylistic/js/jsx-quotes': ['error', 'prefer-single'],
-            '@stylistic/js/quotes': ['error', 'single', {
-                'allowTemplateLiterals': 'always'
+            ...js.configs.recommended.rules,
+            "@stylistic/arrow-spacing": ["error", { "after": true, "before": true }],
+            "@stylistic/brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+            "@stylistic/comma-dangle": ["error", "never"],
+            "@stylistic/comma-spacing": ["error", { "after": true }],
+            "@stylistic/eol-last": ["error", "always"],
+            "@stylistic/indent": ["error", 4],
+            "@stylistic/jsx-quotes": ["error", "prefer-double"],
+            "@stylistic/object-curly-spacing": ["error", "always"],
+            "@stylistic/quotes": ["error", "double", { "allowTemplateLiterals": "always" }],
+            "@stylistic/semi": ["error", "always"],
+            "eqeqeq": ["error", "always"],
+            "importPlugin/newline-after-import": ["error", { "considerComments": true, "count": 2, "exactCount": true }],
+            "importPlugin/order": ["error", {
+                "alphabetize": { "caseInsensitive": false, "order": "asc" },
+                "groups": [[
+                    "index",
+                    "type",
+                    "object",
+                    "external",
+                    "internal",
+                    "sibling",
+                    "parent",
+                    "builtin",
+                    "unknown"
+                ]],
+                "named": true,
+                "newlines-between": "never"
             }],
-            'eqeqeq': ['error', 'always'],
-            '@stylistic/js/object-curly-spacing': ['error', 'always'],
-            '@stylistic/js/arrow-spacing': ['error', { 'before': true, 'after': true }]
+            "sort-keys-fix/sort-keys-fix": ["error", "asc", {
+                "caseSensitive": true,
+                "natural": true
+            }]
         }
     }
-)
+];

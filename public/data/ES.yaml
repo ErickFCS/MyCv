@@ -1,6 +1,6 @@
 id: ES
 pageTitle: CV Erick F. Carvalho Sanchez
-name: Erick Fer. Carvalho Sanchez
+name: Erick Fernando Carvalho Sanchez
 image: "perfil.png"
 role: Informático y Aspirante a Técnico Electrónico
 infos:
@@ -24,9 +24,9 @@ infos:
     icon: Location
 description: >-
   Soy una persona tranquila, curiosa y perseverante, con
-  una mirada analítica sobre el mundo. Prefiero observar
+  una mirada analítica sobre el mundo. Prefiero observar y escuchar
   antes que hablar, y disfruto aprendiendo en profundidad
-  sobre aquello que me interesa. Me atraen la tecnología, la
+  sobre aquello que me interesa. Me atrae la tecnología, la
   música, el diseño y el conocimiento en general, especialmente
   en campos como la informática, la electrónica, la matemática
   y la psicología. Creo en la sinceridad, la integridad y la
@@ -39,20 +39,20 @@ sections:
     items:
       - date: Desde el 06/2024 hasta ahora
         name: Desarrollador Full Stack Freelance con enfoque en DevOps
-        clarification: De forma autónoma
+        clarification: Autónomo
         list:
           - item: >-
-              Integró APIs de terceros para mejorar la funcionalidad general de
+              Integré APIs de terceros para mejorar la funcionalidad general de
               la aplicación y mejorar la experiencia del usuario.
           - item: >-
-              Demostró sólidas habilidades para la resolución de problemas al
+              Demostré sólidas habilidades para la resolución de problemas al
               identificar y resolver rápidamente los defectos, lo que generó una
               mayor estabilidad de la aplicación y satisfacción del usuario.
           - item: >-
-              Realizó revisiones de código exhaustivas para mantener altos
+              Realizé revisiones de código exhaustivas para mantener altos
               estándares de calidad y consistencia durante todo el ciclo de vida
               del proyecto.
-          - item: Revisó el código, depuró problemas y corrigió problemas.
+          - item: Revisé, depuré y corregí problemas en el código.
       - date: Desde el 05/2025 hasta ahora
         name: Analista Técnico de Inventario y Automatización de Procesos
         clarification: En Somarfer S.A.

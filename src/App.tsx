@@ -4,27 +4,8 @@ import SectionList from './components/SectionList/Index'
 import Stack from 'react-bootstrap/Stack'
 import Image from 'react-bootstrap/Image'
 import Spinner from 'react-bootstrap/Spinner'
-import { useEffect, useState } from 'react'
-import { getData } from './services'
 
-function App() {
-    const [resumeData, setResumeData] = useState<null | ResumeData>(null)
-    useEffect(() => {
-        const doFetching = () => {
-            setTimeout(() => {
-                getData()
-                    .then((fetchedResumeData) => {
-                        setResumeData(fetchedResumeData[0])
-                        if (fetchedResumeData[1])
-                            doFetching()
-                    })
-                    .catch((error) => {
-                        console.log(error)
-                    })
-            }, 5000)
-        }
-        doFetching()
-    }, [])
+function App({resumeData}: {resumeData: ResumeData | null}) {
     if (resumeData === null) {
         return (
             <Stack style={{ justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100vw' }}>
